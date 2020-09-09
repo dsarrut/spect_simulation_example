@@ -1,0 +1,7 @@
+
+
+/gate/physics/Gamma/SetCutInRegion      SPECThead 0.1 mm
+/gate/physics/Electron/SetCutInRegion   SPECThead 0.1 mm
+/gate/physics/Positron/SetCutInRegion   SPECThead 0.1 mm
+
+

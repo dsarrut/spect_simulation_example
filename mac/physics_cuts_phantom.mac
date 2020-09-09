@@ -1,0 +1,6 @@
+
+
+/gate/physics/Gamma/SetCutInRegion      phantom 0.1 mm
+/gate/physics/Electron/SetCutInRegion   phantom 0.1 mm
+/gate/physics/Positron/SetCutInRegion   phantom 0.1 mm
+

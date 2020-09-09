@@ -1,0 +1,67 @@
+
+# -----------------------------------------------------------------------------
+# Alias
+
+# required alias: 
+#/control/alias N 100
+
+# Fake, will not be used
+/control/alias ACTIVITY_BQ 1
+/control/alias SPECT_RADIUS 30
+
+# Parameters
+/control/alias RADIONUCLIDE Lu177
+/control/alias TIME_START 0
+/control/alias TIME_SLICE 1
+/control/alias TIME_STOP 1
+
+/control/alias HEAD_NB 1
+/control/alias NB_BIN 2
+
+/control/execute mac/nm670/alias_rad_colli.mac
+
+# -----------------------------------------------------------------------------
+# Geometry definition
+
+/control/execute mac/verbose.mac
+/control/execute mac/world.mac
+/control/execute mac/phantom_fake.mac
+/control/execute mac/nm670/spect.mac
+/control/execute mac/spect_detector_input_plane.mac
+
+# Rotate the head
+/control/execute mac/nm670/spect_translation.mac
+
+# -----------------------------------------------------------------------------
+# Physics
+
+/control/execute mac/physics_list.mac
+
+# -----------------------------------------------------------------------------
+# OUTPUT
+
+/control/execute mac/output_stat.mac
+/control/execute mac/output_arf_dataset.mac
+
+# -----------------------------------------------------------------------------
+# INITIALISATION
+
+/gate/run/initialize
+
+# -----------------------------------------------------------------------------
+# SOURCE
+
+/control/execute mac/source_plane.mac
+
+
+# -----------------------------------------------------------------------------
+# START
+
+/control/listAlias
+
+/gate/application/setTotalNumberOfPrimaries {N}
+/gate/application/start
+
+
+
+

@@ -1,0 +1,26 @@
+
+
+# --------------------------------------------
+# CT Image 
+# --------------------------------------------
+
+# Generate materials from Hounsfield units
+/gate/HounsfieldMaterialGenerator/SetMaterialTable data/Schneider2000MaterialsTable.txt
+/gate/HounsfieldMaterialGenerator/SetDensityTable  data/Schneider2000DensitiesTable.txt
+/gate/HounsfieldMaterialGenerator/SetDensityTolerance               {CT_HU_TOL} g/cm3
+/gate/HounsfieldMaterialGenerator/SetOutputMaterialDatabaseFilename data/phantom_HUmaterials.db
+/gate/HounsfieldMaterialGenerator/SetOutputHUMaterialFilename       data/phantom_HU2mat.txt
+/gate/HounsfieldMaterialGenerator/Generate
+
+# Insert CT image 
+/gate/world/daughters/name                       phantom
+/gate/world/daughters/insert                     ImageNestedParametrisedVolume
+/gate/geometry/setMaterialDatabase               data/phantom_HUmaterials.db
+/gate/phantom/geometry/setHUToMaterialFile       data/phantom_HU2mat.txt
+/gate/phantom/geometry/setImage                  {CT}
+
+# Position the image  
+/gate/phantom/geometry/TranslateTheImageAtThisIsoCenter {CT_ISOCENTER_X} {CT_ISOCENTER_Y} {CT_ISOCENTER_Z} mm
+/gate/phantom/geometry/setRotationAroundPixelIsoCenter true
+/gate/phantom/placement/setRotationAxis 1 0 0
+/gate/phantom/placement/setRotationAngle 90 deg

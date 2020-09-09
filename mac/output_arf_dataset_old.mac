@@ -1,0 +1,20 @@
+
+
+
+/gate/actor/addActor                   NN_ARF_Actor arf
+/gate/actor/arf/attachTo               detPlane
+/gate/actor/arf/save                   output/arf.root
+/gate/actor/arf/setMode                train
+/gate/actor/arf/setEnergyWindowNames   {ENERGY_CHANNELS}
+/gate/actor/arf/setRussianRoulette     50
+
+
+####  FAKE
+/control/strdoif {RADIONUCLIDE} == {TECHNETIUM} /control/alias PT_FILE data/arf_Tc99m
+/control/strdoif {RADIONUCLIDE} == {INDIUM} /control/alias     PT_FILE data/arf_In111
+/control/strdoif {RADIONUCLIDE} == {LUTETIUM} /control/alias   PT_FILE data/arf_Lu177
+/control/strdoif {RADIONUCLIDE} == {IODINE} /control/alias     PT_FILE data/arf_I131
+/control/strdoif {RADIONUCLIDE} == {SINGLE} /control/alias     PT_FILE data/arf_Lu177
+
+/gate/actor/arf/setNNModel             {PT_FILE}.pt
+/gate/actor/arf/setNNDict              {PT_FILE}.json

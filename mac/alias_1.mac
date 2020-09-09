@@ -1,0 +1,27 @@
+
+/control/alias RADIONUCLIDE Lu177
+
+/control/alias SPECT_RADIUS 30
+/control/alias TIME_START 0
+/control/alias TIME_SLICE 15
+/control/alias TIME_STOP 45
+
+
+/control/alias CT               data/ct_sm_24h_4mm_crop.mhd
+/control/alias CT_MASK          data/ct_sm_24h_4mm_patient_dilated.mhd
+/control/alias CT_HU_TOL        0.1
+
+#/control/alias SOURCE_IMAGE     data/activity_sm_24h_fov2.mhd
+/control/alias SOURCE_IMAGE     data/activity_test_3_norm.mhd
+
+/control/alias CT_ISOCENTER_X   3.5090299999999957
+/control/alias CT_ISOCENTER_Y   3.2090299999999843
+/control/alias CT_ISOCENTER_Z   179.20902999999998
+
+/control/alias SOURCE_ISOCENTER_X   8.0
+/control/alias SOURCE_ISOCENTER_Y   8.0
+/control/alias SOURCE_ISOCENTER_Z   1.25
+
+
+/control/alias SPECT_PLACEMENTS data/spect_2_head_3_rot.placements
+

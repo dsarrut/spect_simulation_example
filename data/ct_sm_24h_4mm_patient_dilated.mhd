@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = -250 -250 -376.75
+CenterOfRotation = 0 0 0
+AnatomicalOrientation = RAI
+ElementSpacing = 4 4 4
+DimSize = 125 125 189
+ElementType = MET_UCHAR
+ElementDataFile = ct_sm_24h_4mm_patient_dilated.raw

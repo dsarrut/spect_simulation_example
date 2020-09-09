@@ -1,0 +1,12 @@
+###### List of placement (translation and rotation)
+###### Column 1      is rotationAngle in degree
+###### Columns 2,3,4 are rotation axis
+###### Columns 5,6,7 are translation in mm
+# Translation = (SPECT_RADIUS_CM + SPECT_PSD_POSITION), in -Z direction
+Time s
+NumberOfPlacements 1
+Rotation deg
+Translation cm
+  0  0.00  0.0 0.0 0.0   0.00 0.00 -38.41     
+ 15  -25.00  0.0 1.0 0.0   -16.23 0.00 -34.81     
+ 30  -50.00  0.0 1.0 0.0   -29.42 0.00 -24.69     

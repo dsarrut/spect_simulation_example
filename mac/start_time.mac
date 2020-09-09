@@ -1,0 +1,19 @@
+
+# ---------------------------------------------
+# Random
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed 123456
+
+# verbose
+#/tracking/verbose 1
+#/control/verbose 0
+
+# print every n particles
+#/run/printProgress 10
+
+# Go
+/gate/application/setTimeStart {TIME_START} s
+/gate/application/setTimeSlice {TIME_SLICE} s
+/gate/application/setTimeStop  {TIME_STOP} s
+/gate/application/start
+

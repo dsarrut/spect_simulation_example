@@ -1,0 +1,9 @@
+
+
+
+/gate/actor/addActor                   NN_ARF_Actor arf
+/gate/actor/arf/attachTo               detPlane
+/gate/actor/arf/save                   output/arf.root
+/gate/actor/arf/setMode                train
+/gate/actor/arf/setEnergyWindowNames   {ENERGY_CHANNELS}
+/gate/actor/arf/setRussianRoulette     50

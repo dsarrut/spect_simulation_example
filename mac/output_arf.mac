@@ -1,0 +1,32 @@
+
+
+/control/strdoif {RADIONUCLIDE} == {TECHNETIUM} /control/alias PT_FILE data/arf_Tc99m
+/control/strdoif {RADIONUCLIDE} == {INDIUM} /control/alias     PT_FILE data/arf_In111
+/control/strdoif {RADIONUCLIDE} == {LUTETIUM} /control/alias   PT_FILE data/arf_Lu177
+/control/strdoif {RADIONUCLIDE} == {IODINE} /control/alias     PT_FILE data/arf_I131
+/control/strdoif {RADIONUCLIDE} == {SINGLE} /control/alias     PT_FILE data/arf_Lu177
+
+/control/listAlias
+
+/gate/actor/addActor                   NN_ARF_Actor arf
+/gate/actor/arf/setMode                predict
+/gate/actor/arf/attachTo               detPlane
+/gate/actor/arf/save                   output/projection.mhd
+/gate/actor/arf/enableSaveSquared      0
+
+/gate/actor/arf/setNNModel             {PT_FILE}.pt
+/gate/actor/arf/setNNDict              {PT_FILE}.json
+
+/gate/actor/arf/setSpacingX            4.41806
+/gate/actor/arf/setSpacingY            4.41806
+/gate/actor/arf/setSizeX               128
+/gate/actor/arf/setSizeY               128
+/gate/actor/arf/setCollimatorLength    99
+#/gate/actor/arf/setBatchSize           1e5
+/gate/actor/arf/setBatchSize           50
+/gate/actor/arf/setEnergyWindowNames   {ENERGY_CHANNELS}
+
+/gate/actor/arf/setOverWriteFilesFlag     false
+/gate/actor/arf/setResetDataAtEachRunFlag true
+
+

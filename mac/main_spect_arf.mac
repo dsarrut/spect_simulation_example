@@ -1,0 +1,59 @@
+
+# -----------------------------------------------------------------------------
+# Alias
+
+#/control/alias ACTIVITY_BQ 10
+
+/control/execute mac/alias_1.mac
+
+/control/execute mac/nm670/alias_rad_colli.mac
+
+# -----------------------------------------------------------------------------
+# Geometry definition
+
+#/control/execute mac/visu.mac
+
+/control/execute mac/verbose.mac
+/control/execute mac/world.mac
+/control/execute mac/phantom_ct.mac
+/control/execute mac/spect_fake_head.mac
+/control/execute mac/spect_detector_input_plane.mac
+
+# Rotate and repeat the heads
+#/control/execute mac/nm670/spect_translation.mac
+#/control/execute mac/nm670/spect_rotation.mac
+/gate/SPECThead/moves/insert                               genericRepeaterMove
+/gate/SPECThead/genericRepeaterMove/setPlacementsFilename  {SPECT_PLACEMENTS}
+
+
+# -----------------------------------------------------------------------------
+# Physics
+
+/control/execute mac/physics_list.mac
+/control/execute mac/physics_cuts_phantom.mac
+
+# -----------------------------------------------------------------------------
+# OUTPUT
+
+/control/execute mac/output_stat.mac
+/control/execute mac/output_arf.mac
+
+# -----------------------------------------------------------------------------
+# INITIALISATION
+
+/gate/run/initialize
+
+# -----------------------------------------------------------------------------
+# SOURCE
+
+/control/execute mac/source_vox.mac
+
+
+# -----------------------------------------------------------------------------
+# START
+
+/control/listAlias
+/control/execute mac/start_time.mac
+
+
+

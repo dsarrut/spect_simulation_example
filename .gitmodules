@@ -1,0 +1,6 @@
+[submodule "mac/gate_mac_nm670"]
+	path = mac/gate_mac_nm670
+	url = https://gitlab.in2p3.fr/davidsarrut/gate_mac_nm670.git
+[submodule "mac/nm670"]
+	path = mac/nm670
+	url = git@gitlab.in2p3.fr:davidsarrut/gate_mac_nm670.git
